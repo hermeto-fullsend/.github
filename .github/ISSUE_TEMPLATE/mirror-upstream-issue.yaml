@@ -1,0 +1,29 @@
+name: Mirror upstream issue
+description: Mirror an upstream issue for Fullsend to work on
+title: "[Fullsend]"
+labels: [mirror]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Note: Due to limitation of GitHub issue templates, the issue title is a required field.
+        It will however be discarded and replaced with the title of the upstream issue.
+  - type: input
+    id: upstream_issue
+    attributes:
+      label: Upstream issue number
+      description: Number of the upstream issue you want to mirror
+    validations:
+      required: true
+  - type: dropdown
+    id: start_stage
+    attributes:
+      label: Starting stage
+      description: Which Fullsend stage should process this issue
+      options:
+        - triage
+        - code
+      default: 0
+    validations:
+      required: true
+
